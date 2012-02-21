@@ -1,0 +1,48 @@
+" Original .vimrc
+	" When started as "evim", evim.vim will already have done these settings.
+	if v:progname =~? "evim"
+		finish
+	endif
+
+	set nobackup " do not keep a backup file, use versions instead
+	set history=50 " keep 50 lines of command line history
+
+  " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+	" so that you can undo CTRL-U after inserting a line break.
+	inoremap <C-U> <C-G>u<C-U>
+
+	" Convenient command to see the difference between the current buffer and the
+	" file it was loaded from, thus the changes you made.
+	" Only define it when not defined already.
+	if !exists(":DiffOrig")
+		command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+				\ | wincmd p | diffthis
+	endif
+
+" Custom options
+	set showmatch
+	set tabstop=2
+	set shiftwidth=2
+	set smartindent
+	set autoread
+	set cpoptions+=n
+	set background=dark
+	set foldmethod=indent
+	set foldlevel=99
+
+" Plugins
+	" favorites"
+	Bundle 'taglist.vim'
+	Bundle 'tpope/vim-fugitive'
+	" installed with Vundle
+	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+	Bundle 'Lokaltog/vim-easymotion'
+	Bundle 'tpope/vim-rails.git'
+	Bundle 'L9'
+	Bundle 'FuzzyFinder'
+	Bundle 'git://git.wincent.com/command-t.git'
+	" manually installed
+	Bundle 'scrooloose/syntastic'
+	Bundle 'jabapyth/vim-debug'
+	Bundle 'jabapyth/pydbgp'
+	Bundle 'astashov/vim-ruby-debugger'
