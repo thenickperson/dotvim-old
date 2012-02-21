@@ -105,14 +105,12 @@ set showcmd
 syntax on
 syntax enable
 
+colorscheme molokai
 if has("gui_running")
-  colorscheme solarized
   set bg=light
   if has("mac")
     set gfn=Monaco:h12
   endif
-else
-  colorscheme desert256
 endif
 
 """""""""""""""""""""""""""""""""
@@ -276,3 +274,9 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+"""""""""""""""""""""""""""""""""
+" # CUSTOM
+"""""""""""""""""""""""""""""""""
+set gfn=Tamsyn\ 8
+nnoremap ; :
+imap ;; <Esc>
