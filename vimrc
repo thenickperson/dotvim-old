@@ -118,18 +118,16 @@ endif
 """""""""""""""""""""""""""""""""
 
 " Whitespace stuff
-set nowrap
+set wrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
-set list listchars=tab:\ \ ,trail:·
+set noexpandtab
 
-function! s:SetupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
+" Custom options
+	"set cpoptions+=n
+	"set foldmethod=indent
+	"set foldlevel=99
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -148,31 +146,13 @@ set smartindent
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
-" make uses real tabs
-au FileType make set noexpandtab
-
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:SetupWrapping()
-
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
 if has("autocmd")
-  " language-specific indentation settings
-  autocmd FileType c,cpp                    setlocal ts=4 sts=4 sw=4 et tw=80 nowrap
-  autocmd FileType sh,csh,tcsh,zsh          setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType php,javascript,css       setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType text,txt,mkd,md,mdown    setlocal ts=4 sts=4 sw=4 et tw=80 wrap
-
-  autocmd FileType html,xhtml,xml           setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType ruby,eruby,yaml          setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType scm,sml,lisp             setlocal ts=2 sts=2 sw=2 et tw=80 nowrap
-
 	" language-specific general settings
 
 	" run file
