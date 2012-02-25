@@ -6,7 +6,7 @@ let g:pathogen_disabled = []
 
 " disable command-t for non-os x systems for the time being
 if !has('mac')
-  let g:pathogen_disabled += ['command-t']
+	let g:pathogen_disabled += ['command-t']
 endif
 
 " snipmate makes backspace do weird shit
@@ -90,8 +90,8 @@ let g:CommandTMaxHeight=20
 
 " Remember last location in file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+		\| exe "normal g'\"" | endif
 endi
 
 " Show (partial) command in the status line
@@ -107,10 +107,10 @@ syntax enable
 
 colorscheme molokai
 if has("gui_running")
-  set bg=light
-  if has("mac")
-    set gfn=Monaco:h12
-  endif
+	set bg=light
+	if has("mac")
+		set gfn=Monaco:h12
+	endif
 endif
 
 """""""""""""""""""""""""""""""""
@@ -152,7 +152,7 @@ filetype plugin indent on
 au FileType make set noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
@@ -173,12 +173,12 @@ if has("autocmd")
   autocmd FileType ruby,eruby,yaml          setlocal ts=2 sts=2 sw=2 et
   autocmd FileType scm,sml,lisp             setlocal ts=2 sts=2 sw=2 et tw=80 nowrap
 
-  " language-specific general settings
+	" language-specific general settings
 
-  " run file
-  autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
-  " check syntax
-  autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
+	" run file
+	autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
+	" check syntax
+	autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
 endif
 
 """""""""""""""""""""""""""""""""
@@ -235,9 +235,9 @@ let macvim_hig_shift_movement = 1
 
 " gist-vim defaults
 if has("mac")
-  let g:gist_clip_command = 'pbcopy'
+	let g:gist_clip_command = 'pbcopy'
 elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
+	let g:gist_clip_command = 'xclip -selection clipboard'
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
@@ -256,13 +256,13 @@ set modelines=10
 
 set t_Co=256
 if has("gui_running") || $TERM=="xterm-256color"
-  set t_Co=256
-  set guioptions-=T
+	set t_Co=256
+	set guioptions-=T
 else
-  "Had to do this in order to continue to allow syntax highlighting on non-
-  "xterm-256color and non-GUI vims.  On OS X, the entire file flashes
-  "if this is not set.
-  set t_Co=256
+	"Had to do this in order to continue to allow syntax highlighting on non-
+	"xterm-256color and non-GUI vims. On OS X, the entire file flashes
+	"if this is not set.
+	set t_Co=256
 endif
 
 """""""""""""""""""""""""""""""""
@@ -271,7 +271,7 @@ endif
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+	source ~/.vimrc.local
 endif
 
 """""""""""""""""""""""""""""""""
