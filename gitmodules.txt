@@ -18,7 +18,9 @@ update individual submodule
 
 remove submodule
 	cd MAIN_REPO_DIR
-	git rm -r SUBMODULE_DIR
+	git rm -r --cached SUBMODULE_DIR
+	rm -r SUBMODULE_DIR
+	vim .gitmodules #delete the entry for the submodule you just removed
 
 update references others have made to newer version of submodules
 	cd MAIN_REPO_DIR
