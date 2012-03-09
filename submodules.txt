@@ -1,25 +1,25 @@
 download a repository with submodules
-    git clone URL MAIN_REPO_DIR
-    git submodule init
-    git submodule update
+	git clone URL MAIN_REPO_DIR
+	git submodule init
+	git submodule update
 
 add new submodule
-    cd MAIN_REPO_DIR
-    git submodule add SUBMODULE_URL SUBMODULE_DIR
-    git submodule init
-    git submodule update
-    git add SUBMODULE_DIR
+	cd MAIN_REPO_DIR
+	git submodule add SUBMODULE_URL SUBMODULE_DIR
+	git submodule init
+	git submodule update
+	git add SUBMODULE_DIR
 
 update individual submodule
-    cd SUBMODULE_DIR
-    git pull
-    cd MAIN_REPO_DIR
-    git add SUBMODULE_DIR
+	cd SUBMODULE_DIR
+	git pull
+	cd MAIN_REPO_DIR
+	git add SUBMODULE_DIR
 
 remove submodule
-    cd MAIN_REPO_DIR
-    git rm -r SUBMODULE_DIR
+	cd MAIN_REPO_DIR
+	git rm -r SUBMODULE_DIR
 
 update references others have made to newer version of submodules
-    cd MAIN_REPO_DIR
-    git submodule update
+	cd MAIN_REPO_DIR
+	git submodule update
