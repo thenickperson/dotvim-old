@@ -11,7 +11,7 @@ endif
 
 " snipmate makes backspace do weird shit
 " autoclose sucks and is broken, too
-let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab']
+let g:pathogen_disabled += ['closepairs', 'delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab']
 
 " pathogen magic
 call pathogen#runtime_append_all_bundles()
@@ -41,8 +41,8 @@ set nocompatible
 set encoding=utf-8
 
 " Directories for swp files
-set backupdir=.,~/.vim/backup
-set directory=.,~/.vim/backupf
+set backupdir=~/.vim/backup
+set directory=~/.vim/backupf
 
 """""""""""""""""""""""""""""""""
 " # UI
@@ -77,6 +77,7 @@ set whichwrap=bs<>[]
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.eot,*.svg,*.ttf,*.woff,*.jpg,*.png,*.gif,*.swp,*.psd
 
 " Status bar
 set laststatus=2
@@ -135,7 +136,7 @@ set backspace=indent,eol,start
 " More auto indentation/tab magic
 " set shiftround
 " set copyindent
-" set smarttab
+set smarttab
 set autoindent
 set smartindent
 
