@@ -164,6 +164,12 @@ endif
 " # SHORTCUTS/MAPPINGS
 """""""""""""""""""""""""""""""""
 
+" Enter vim commands without having to press shift
+nnoremap ; :
+
+" Typing ;; quickly exits insert mode
+imap ;; <Esc>
+
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -252,9 +258,3 @@ endif
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
-
-"""""""""""""""""""""""""""""""""
-" # CUSTOM
-"""""""""""""""""""""""""""""""""
-nnoremap ; :
-imap ;; <Esc>
