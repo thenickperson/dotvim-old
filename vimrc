@@ -106,13 +106,11 @@ set showcmd
 syntax on
 syntax enable
 
+" Font
+set gfn=Tamsyn\ 8
+
+" Colorscheme
 colorscheme molokai
-if has("gui_running")
-	set bg=light
-	if has("mac")
-		set gfn=Monaco:h12
-	endif
-endif
 
 """""""""""""""""""""""""""""""""
 " # TEXT, TABS, INDENTATION, ETC.
@@ -258,6 +256,5 @@ endif
 """""""""""""""""""""""""""""""""
 " # CUSTOM
 """""""""""""""""""""""""""""""""
-set gfn=Tamsyn\ 8
 nnoremap ; :
 imap ;; <Esc>
