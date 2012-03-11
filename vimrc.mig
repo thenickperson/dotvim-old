@@ -1,8 +1,5 @@
 " Original .vimrc
 
-	set nobackup " do not keep a backup file, use versions instead
-	set history=50 " keep 50 lines of command line history
-
 	" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 	" so that you can undo CTRL-U after inserting a line break.
 	inoremap <C-U> <C-G>u<C-U>
@@ -18,7 +15,6 @@
 " Plugins
 	" favorites"
 	Bundle 'taglist.vim'
-	Bundle 'tpope/vim-fugitive'
 	" installed with Vundle
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	Bundle 'Lokaltog/vim-easymotion'
