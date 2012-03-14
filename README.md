@@ -32,6 +32,12 @@ curl https://raw.github.com/thenickperson/dotvim/master/bootstrap.sh -o - | sh
 
 In most cases, that'll do it!
 
+## Install Exuberant Ctags
+
+Go ahead and install [Exuberant Ctags](http://ctags.sourceforge.net/) for your OS.
+This will let the taglist plugin look through your source code for tags (so you can
+jump between functions and classes and stuff in handy ways).
+
 ## Ignoring documentation content in submodules
 
 Run this bad boy in your ~/.vim folder:
