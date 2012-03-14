@@ -239,7 +239,7 @@ runtime! macros/matchit.vim
 " Only define it when not defined already.
 if !exists(":Fdiff")
 	command Fdiff vert new | set bt=nofile | r # | 0d_ | diffthis
-			\ | wincmd p | diffthis
+		\ | wincmd p | diffthis
 endif
 
 """""""""""""""""""""""""""""""""
