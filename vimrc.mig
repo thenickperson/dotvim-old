@@ -1,6 +1,4 @@
 " Plugins
-	" favorites"
-	Bundle 'taglist.vim'
 	" installed with Vundle
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	Bundle 'Lokaltog/vim-easymotion'
