@@ -121,3 +121,6 @@
 [submodule "bundle/better-css-syntax-for-vim"]
 	path = bundle/better-css-syntax-for-vim
 	url = git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
