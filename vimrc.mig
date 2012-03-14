@@ -1,6 +1,5 @@
 " Plugins
 	" installed with Vundle
-	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	Bundle 'Lokaltog/vim-easymotion'
 	Bundle 'L9'
 	Bundle 'FuzzyFinder'
