@@ -193,6 +193,9 @@ vmap <C-Down> ]egv
 " NERDCommenter
 map <Leader>/ <plug>NERDCommenterToggle
 
+" Taglist
+map <Leader>l :TlistToggle <CR>
+
 " Remap help to clearing the search highlight
 map <F1> :nohl<CR>
 imap <F1> <ESC>:nohl<CR> i
