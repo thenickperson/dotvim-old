@@ -1,7 +1,4 @@
 " Plugins
-	" installed with Vundle
-	Bundle 'Lokaltog/vim-easymotion'
-	Bundle 'FuzzyFinder'
 	" manually installed
 	Bundle 'scrooloose/syntastic'
 	Bundle 'jabapyth/vim-debug'
