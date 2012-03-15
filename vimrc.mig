@@ -1,6 +1,0 @@
-" Plugins
-	" manually installed
-	Bundle 'scrooloose/syntastic'
-	Bundle 'jabapyth/vim-debug'
-	Bundle 'jabapyth/pydbgp'
-	Bundle 'astashov/vim-ruby-debugger'
