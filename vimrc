@@ -4,16 +4,16 @@
 
 let g:pathogen_disabled = []
 
-" disable command-t for non-os x systems for the time being
+" Disable command-t for non-os x systems for the time being
 if !has('mac')
 	let g:pathogen_disabled += ['command-t']
 endif
 
-" snipmate makes backspace do weird shit
-" autoclose sucks and is broken, too
+" Snipmate makes backspace do weird shit
+" Autoclose sucks and is broken, too
 let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab']
 
-" pathogen magic
+" Pathogen magic
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -26,12 +26,12 @@ set autoread
 
 " Auto-reload vimrc
 autocmd! bufwritepost vimrc source ~/.vim/vimrc
-" autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
+"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
 
-" reset leader (default \)
+" Reset leader (default \)
 let mapleader=","
 
-" Scrolling. Text selection.
+" Enable mouse support
 set mouse=a
 
 " We don't like vi
@@ -59,17 +59,15 @@ set cursorline
 
 " Highlight search matches
 set hlsearch
-" Act like search in modern web browsers
+" Incremental search (like in modern web browsers)
 set incsearch
 " Ignore case when searching
 set ignorecase
+" Override ignorecase if the search contains upper case characters
 set smartcase
 
 " Turn on magic for regexes
 set magic
-
-" Show matching braces when text indicator is over them
-" set showmatch
 
 " Be able to arrow key and backspace across newlines
 set whichwrap=bs<>[]
@@ -97,7 +95,7 @@ if has("autocmd")
 		\| exe "normal g'\"" | endif
 endi
 
-" Show (partial) command in the status line
+" Display partial commands in the status line
 set showcmd
 
 """""""""""""""""""""""""""""""""
@@ -120,31 +118,32 @@ colorscheme molokai
 
 " Whitespace stuff
 set wrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 "number of spaces that a <Tab> in the file counts for
+set shiftwidth=2 "number of spaces to use for each step to (auto)indent
 set softtabstop=2
-set noexpandtab
+set noexpandtab "use real tabs, not spaces, for indents
+"set expandtab
 
 " Custom options
 	"set cpoptions+=n
 	"set foldmethod=indent
 	"set foldlevel=99
 
-" allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 " More auto indentation/tab magic
-" set shiftround
-" set copyindent
-set smarttab
-set autoindent
+"set shiftround
+"set copyindent
+set smarttab "when on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'
+set autoindent "copy indent from current line when starting a new line
 set smartindent
 
 """""""""""""""""""""""""""""""""
 " # LANGUAGES/FILETYPES
 """""""""""""""""""""""""""""""""
 
-" load the plugin and indent settings for the detected filetype
+" Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
@@ -154,11 +153,11 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=r
 au BufNewFile,BufRead *.json set ft=javascript
 
 if has("autocmd")
-	" language-specific general settings
+	" Language-specific general settings
 
-	" run file
+	" Run file
 	autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
-	" check syntax
+	" Check syntax
 	autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
 endif
 
@@ -223,7 +222,7 @@ cnoremap <C-E> <End>
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
 
-" gist-vim defaults
+" Gist-vim defaults
 if has("mac")
 	let g:gist_clip_command = 'pbcopy'
 elseif has("unix")
@@ -236,7 +235,7 @@ let g:gist_open_browser_after_post = 1
 runtime! macros/matchit.vim
 
 """""""""""""""""""""""""""""""""
-"" # CUSTOM COMMANDS
+" # CUSTOM COMMANDS
 """""""""""""""""""""""""""""""""
 
 " Convenient command to see the difference between the current buffer and the
