@@ -105,12 +105,14 @@ set showcmd
 " Syntax highlighting!
 syntax on
 syntax enable
+"set background=dark
 
 " Font
 set gfn=Tamsyn\ 8
 
 " Colorscheme
 colorscheme molokai
+"colorscheme solarized
 
 """""""""""""""""""""""""""""""""
 " # TEXT, TABS, INDENTATION, ETC.
