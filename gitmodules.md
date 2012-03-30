@@ -30,7 +30,7 @@ cd MAIN_REPO_DIR
 git add SUBMODULE_DIR
 ```
 
-#update references others have made to newer versions of submodules
+##update references others have made to newer versions of submodules
 ```bash
 cd MAIN_REPO_DIR
 git submodule update
