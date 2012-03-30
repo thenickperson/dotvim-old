@@ -1,11 +1,11 @@
-#download a repository with submodules
+##download a repository with submodules
 ```
 git clone URL MAIN_REPO_DIR
 git submodule init
 git submodule update
 ```
 
-#add new submodule
+##add new submodule
 ```
 cd MAIN_REPO_DIR
 git submodule add SUBMODULE_URL SUBMODULE_DIR
@@ -14,7 +14,7 @@ git submodule update
 git add SUBMODULE_DIR
 ```
 
-#remove submodule
+##remove submodule
 ```
 cd MAIN_REPO_DIR
 git rm -r --cached SUBMODULE_DIR
@@ -22,7 +22,7 @@ rm -r SUBMODULE_DIR
 vim .gitmodules #delete the entry for the submodule you just removed
 ```
 
-#update individual submodule
+##update individual submodule
 ```
 cd SUBMODULE_DIR
 git pull
