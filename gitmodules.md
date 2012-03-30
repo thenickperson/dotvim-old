@@ -25,6 +25,3 @@ git add SUBMODULE_DIR
 #update references others have made to newer version of submodules
 cd MAIN_REPO_DIR
 git submodule update
-
-#vim syntax modeline for this file
-vim: syntax=sh
