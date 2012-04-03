@@ -11,7 +11,7 @@ endif
 
 " Snipmate makes backspace do weird shit
 " Autoclose sucks and is broken, too
-let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab']
+let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
 
 " Pathogen magic
 call pathogen#runtime_append_all_bundles()
