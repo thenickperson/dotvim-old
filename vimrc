@@ -260,7 +260,8 @@ set modelines=10
 set t_Co=256
 if has("gui_running") || $TERM=="xterm-256color"
 	set t_Co=256
-	set guioptions-=T
+	set guioptions-=T "hide toolbar
+	set guioptions-=m "hide menu bar
 else
 	"Had to do this in order to continue to allow syntax highlighting on non-
 	"xterm-256color and non-GUI vims. On OS X, the entire file flashes
