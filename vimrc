@@ -141,6 +141,9 @@ set smarttab "when on, a <Tab> in front of a line inserts blanks according to 's
 set autoindent "copy indent from current line when starting a new line
 set smartindent
 
+" Show '>   ' at the beginning of lines that are automatically wrapped
+set showbreak=>\ \ \ 
+
 """""""""""""""""""""""""""""""""
 " # LANGUAGES/FILETYPES
 """""""""""""""""""""""""""""""""
