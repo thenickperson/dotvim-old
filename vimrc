@@ -239,6 +239,18 @@ let g:gist_open_browser_after_post = 1
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
+" Toggle invisible character display
+nmap <Leader>h :set list!<CR>
+
+" Run/compile shortcuts for different languages
+map <Leader>r :make<CR>
+au BufNewFile,BufRead *.sh    setlocal makeprg=bash\ %
+au BufNewFile,BufRead *.java  setlocal makeprg=javac\ %
+au BufNewFile,BufRead *.rb    setlocal makeprg=ruby\ %
+au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
+au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
+au BufNewFile,BufRead *.html  setlocal makeprg=firefox\ %
+
 """""""""""""""""""""""""""""""""
 " # CUSTOM COMMANDS
 """""""""""""""""""""""""""""""""
