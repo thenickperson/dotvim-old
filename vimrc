@@ -4,14 +4,12 @@
 
 let g:pathogen_disabled = []
 
-" Disable command-t for non-os x systems for the time being
-if !has('mac')
-	let g:pathogen_disabled += ['command-t']
-endif
+" snipmate makes backspace do weird shit
+" autoclose sucks and is broken, too
+" let g:pathogen_disabled += ['snipmate'] ", 'closetag-vim', 'supertab']
 
-" Snipmate makes backspace do weird shit
-" Autoclose sucks and is broken, too
-let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
+" MY OLD STUFF
+" let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
 
 " Pathogen magic
 call pathogen#runtime_append_all_bundles()
@@ -36,6 +34,12 @@ set mouse=a
 
 " We don't like vi
 set nocompatible
+
+" Add the g flag to search/replace by default
+set gdefault
+
+" Show the filename in the window titlebar
+set title
 
 " Set encoding
 set encoding=utf-8
@@ -85,9 +89,6 @@ let g:Powerline_symbols = 'unicode'
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
-
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " Remember last location in file
 if has("autocmd")
@@ -152,10 +153,11 @@ set showbreak=>\ \ \
 filetype plugin indent on
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile *.html.erb set ft=html.eruby
 
 " Add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.json set ft=json syntax=javascript
 
 if has("autocmd")
 	" Language-specific general settings
@@ -201,6 +203,13 @@ map <Leader>/ <plug>NERDCommenterToggle
 
 " Taglist
 map <Leader>l :TlistToggle <CR>
+
+" Remove trailing whitespace from all lines in the current buffer
+command Rtrim call <SID>RightTrim()
+function <SID>RightTrim()
+  :% s/\s*$//g
+  nohl
+endfunction
 
 " Remap help to clearing the search highlight
 map <F1> :nohl<CR>

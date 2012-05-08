@@ -76,18 +76,12 @@
 [submodule "bundle/gist"]
 	path = bundle/gist
 	url = git://github.com/mattn/gist-vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://github.com/wincent/Command-T.git
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = git://github.com/mrtazz/molokai.vim.git
 [submodule "bundle/mustache"]
 	path = bundle/mustache
 	url = git://github.com/juvenn/mustache.vim.git
-[submodule "bundle/delimitmate"]
-	path = bundle/delimitmate
-	url = git://github.com/Raimondi/delimitMate.git
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = git://github.com/mattn/zencoding-vim.git
@@ -97,9 +91,6 @@
 [submodule "bundle/slim"]
 	path = bundle/slim
 	url = git://github.com/bbommarito/vim-slim.git
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = git://github.com/vim-scripts/AutoClose.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
@@ -127,3 +118,9 @@
 [submodule "bundle/vim-easymotion.git"]
 	path = bundle/vim-easymotion.git
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-smartinput"]
+	path = bundle/vim-smartinput
+	url = git://github.com/kana/vim-smartinput.git
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
