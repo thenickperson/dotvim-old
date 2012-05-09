@@ -112,7 +112,8 @@ syntax enable
 set gfn=Tamsyn\ 8
 
 " Colorscheme
-colorscheme molokai
+colorscheme Tomorrow-Night-Eighties
+"colorscheme molokai
 "colorscheme solarized
 
 """""""""""""""""""""""""""""""""
