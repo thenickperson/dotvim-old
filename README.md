@@ -120,9 +120,10 @@ Color Schemes
 =============
 
 ```
-solarized
 color-sampler-pack
-molokai (default)
 irblack
+molokai
+solarized
+tomorrow (default)
 vividchalk
 ```
