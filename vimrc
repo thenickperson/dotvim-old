@@ -3,10 +3,7 @@
 """""""""""""""""""""""""""""""""
 
 let g:pathogen_disabled = []
-
-" snipmate makes backspace do weird shit
-" autoclose sucks and is broken, too
-" let g:pathogen_disabled += ['snipmate'] ", 'closetag-vim', 'supertab']
+let g:pathogen_disabled += ['vim-smartinput', 'nerdtree'] ", 'closetag-vim', 'supertab']
 
 " MY OLD STUFF
 " let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
@@ -155,7 +152,7 @@ filetype plugin indent on
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-au BufRead,BufNewFile *.html.erb set ft=html.eruby
+au BufRead,BufNewFile *.html.erb set ft=eruby
 
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
