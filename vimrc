@@ -109,9 +109,11 @@ syntax enable
 set gfn=Tamsyn\ 8
 
 " Colorscheme
-colorscheme Tomorrow-Night-Eighties
+if $TERM!="linux"
+	colorscheme Tomorrow-Night-Eighties
 "colorscheme molokai
 "colorscheme solarized
+endif
 
 """""""""""""""""""""""""""""""""
 " # TEXT, TABS, INDENTATION, ETC.
