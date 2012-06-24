@@ -7,6 +7,7 @@ let g:pathogen_disabled = []
 " snipmate makes backspace do weird shit
 " autoclose sucks and is broken, too
 " let g:pathogen_disabled += ['snipmate'] ", 'closetag-vim', 'supertab']
+let g:pathogen_disabled += ['gist']
 
 " MY OLD STUFF
 " let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
