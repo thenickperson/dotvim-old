@@ -5,9 +5,6 @@
 let g:pathogen_disabled = []
 let g:pathogen_disabled += ['vim-smartinput', 'nerdtree'] ", 'closetag-vim', 'supertab']
 
-" MY OLD STUFF
-" let g:pathogen_disabled += ['delimitmate', 'snipmate', 'autoclose', 'closetag-vim', 'supertab', 'html5']
-
 " Pathogen magic
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -160,12 +157,24 @@ au BufRead,BufNewFile *.html.erb set ft=eruby
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
 
 if has("autocmd")
-	" Language-specific general settings
+  " language-specific indentation settings
+  autocmd FileType c,cpp                    setlocal ts=4 sts=4 sw=4 et tw=80 nowrap
+  autocmd FileType sh,csh,tcsh,zsh          setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType php,javascript,css       setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType text,txt,mkd,md,mdown    setlocal ts=4 sts=4 sw=4 et tw=80 wrap
 
-	" Run file
-	autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
-	" Check syntax
-	autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
+  autocmd FileType html,xhtml,xml           setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType ruby,eruby,yaml          setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType scm,sml,lisp             setlocal ts=2 sts=2 sw=2 et tw=80 nowrap
+
+  autocmd FileType changelog                setlocal ts=4 sts=4 sw=4 et tw=80 wrap
+
+  " language-specific general settings
+
+  " run file
+  autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
+  " check syntax
+  autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
 endif
 
 """""""""""""""""""""""""""""""""
@@ -205,8 +214,8 @@ map <Leader>/ <plug>NERDCommenterToggle
 map <Leader>l :TlistToggle <CR>
 
 " Remove trailing whitespace from all lines in the current buffer
-command Rtrim call <SID>RightTrim()
-function <SID>RightTrim()
+command! Rtrim call <SID>RightTrim()
+function! <SID>RightTrim()
   :% s/\s*$//g
   nohl
 endfunction
