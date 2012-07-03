@@ -14,10 +14,6 @@ call pathogen#helptags()
 " Automatically load changed files
 set autoread
 
-" Auto-reload vimrc
-autocmd! bufwritepost vimrc source ~/.vim/vimrc
-"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
-
 " Reset leader (default \)
 let mapleader=","
 
@@ -154,27 +150,6 @@ au BufRead,BufNewFile *.html.erb set ft=eruby
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
 
-if has("autocmd")
-  " language-specific indentation settings
-  autocmd FileType c,cpp                    setlocal ts=4 sts=4 sw=4 et tw=80 nowrap
-  autocmd FileType sh,csh,tcsh,zsh          setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType php,javascript,css       setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType text,txt,mkd,md,mdown    setlocal ts=4 sts=4 sw=4 et tw=80 wrap
-
-  autocmd FileType html,xhtml,xml           setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType ruby,eruby,yaml          setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType scm,sml,lisp             setlocal ts=2 sts=2 sw=2 et tw=80 nowrap
-
-  autocmd FileType changelog                setlocal ts=4 sts=4 sw=4 et tw=80 wrap
-
-  " language-specific general settings
-
-  " run file
-  autocmd FileType php noremap <C-M> :w!<CR>:!php %<CR>
-  " check syntax
-  autocmd FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
-endif
-
 """""""""""""""""""""""""""""""""
 " # SHORTCUTS/MAPPINGS
 """""""""""""""""""""""""""""""""
@@ -218,10 +193,6 @@ function! <SID>RightTrim()
   nohl
 endfunction
 
-" Remap help to clearing the search highlight
-map <F1> :nohl<CR>
-imap <F1> <ESC>:nohl<CR> i
-
 " Delete line with CTRL-K
 map  <C-K>      dd
 imap <C-K>      <C-O>dd
@@ -231,29 +202,6 @@ imap <C-K>      <C-O>dd
 nmap <C-J>      gqap
 vmap <C-J>      gq
 imap <C-J>      <C-O>gqap
-
-" Tabs
-map <Leader>tp :tabp<CR>
-map <Leader>tn :tabnext<CR>
-
-" Bash-like home/end key mappings
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
-" Gist-vim defaults
-if has("mac")
-	let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-	let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" % to bounce from do to end etc.
-runtime! macros/matchit.vim
 
 " Toggle invisible character display
 nmap <Leader>h :set list!<CR>
@@ -298,13 +246,4 @@ else
 	"xterm-256color and non-GUI vims. On OS X, the entire file flashes
 	"if this is not set.
 	set t_Co=256
-endif
-
-"""""""""""""""""""""""""""""""""
-" # LOCAL VIM CONFIG
-"""""""""""""""""""""""""""""""""
-
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-	source ~/.vimrc.local
 endif
