@@ -66,4 +66,3 @@ else
     pull
     update_docs
 fi
-
