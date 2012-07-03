@@ -2,11 +2,9 @@
 " # PATHOGEN
 """""""""""""""""""""""""""""""""
 
-let g:pathogen_disabled = []
-let g:pathogen_disabled += ['gist', 'vim-smartinput', 'nerdtree'] ", 'closetag-vim', 'supertab']
-
-" Pathogen magic
-call pathogen#runtime_append_all_bundles()
+runtime bundle/pathogen/autoload/pathogen.vim
+let g:pathogen_disabled = ['gist', 'vim-smartinput', 'nerdtree'] ", 'closetag-vim', 'supertab']
+call pathogen#infect()
 call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""
