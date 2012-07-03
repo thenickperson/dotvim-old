@@ -1,18 +1,21 @@
-.netrwhist
-tmp
-nerdtree_plugin
+.*.sw[a-z]
+*.un~
+Session.vim
 
-after
-autoload
-doc
-plugin
-ruby
-snippets
-syntax
-syntax_checkers
-ftdetect
-ftplugin
-colors
-indent
-.VimballRecord
+#.netrwhist
+#tmp
+#nerdtree_plugin
 
+#after
+#autoload
+#doc
+#plugin
+#ruby
+#snippets
+#syntax
+#syntax_checkers
+#ftdetect
+#ftplugin
+#colors
+#indent
+#.VimballRecord
